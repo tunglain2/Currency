@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
         String ntdValue = ntd.getText().toString();
         if(ntdValue.isEmpty()){
             new AlertDialog.Builder(this)
-                    .setTitle("Problem")
-                    .setMessage("Please enter your NTD amount")
-                    .setPositiveButton("OK",null)
+                    .setTitle(R.string.problem)
+                    .setMessage(R.string.please_enter_ntd)
+                    .setPositiveButton(R.string.ok,null)
                     .show();
         }else{
             float nt = Float.parseFloat(ntdValue);
@@ -51,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
             jp.setText("" + jp_Amt);
             us.setText("" + us_Amt);
             new AlertDialog.Builder(this)
-                    .setTitle("Result")
-                    .setMessage("JP is " + jp_Amt + "\n" + "USD is " + us_Amt  )
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    .setTitle(R.string.result)
+                    .setMessage(getString(R.string.jp_is) + jp_Amt + "\n" + getString(R.string.usd_is) + us_Amt  )
+                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             ntd.setText("");
